@@ -45,7 +45,7 @@
 <div class="container">
 	<h5>■ TunyTypeの使い方</h5>
 	<article>
-
+		<a href="https://github.com/chaordicorg/tinytype" target="_blank">| ダウンロード |</a>
 	</article>
 
 	<main>
@@ -59,13 +59,14 @@
 				<li id="line-4">いかにもたしかにともりつづける</li>
 				<li id="line-5">因果交流電燈のひとつの青い照明です</li>
 				<li id="line-6">（ひかりはたもち　その電燈は失はれ）</li>
-			</li>
+			</ul>
 		</article>
 
 		<h1>tinytype.js</h1>
 
 		<article>
-<pre><code>var _easytype = {
+			<p>実行ファイル。読み込むなり、直接書くなり。jQueryなくても動きます。</p>
+<pre><code>var _tinytype = {
 	start: function(_opt){
 
 		var count = -1;
@@ -133,6 +134,7 @@
 		</article>
 
 		<article>
+			<p>カーソル（&lt;i&gt;）のスタイルを指定。また、指定する要素を visibility: hidden; しておく。</p>
 <pre><code>&lt;style&gt;
 /* -- cursor -- */
 i{
@@ -147,9 +149,27 @@ i{
 </code></pre>
 		</article>
 
+
+
 		<article>
+			<p></p>
+<pre><code>&lt;ul&gt;
+	&lt;li id="line-1"&gt;わたくしといふ現象は仮定された有機交流電燈の&lt;/li&gt;
+	&lt;li id="line-2"&gt;ひとつの青い照明です（あらゆる透明な幽霊の複合体）&lt;/li&gt;
+	&lt;li id="line-3"&gt;風景やみんなといつしよにせはしくせはしく明滅しながら&lt;/li&gt;
+	&lt;li id="line-4"&gt;いかにもたしかにともりつづける&lt;/li&gt;
+	&lt;li id="line-5"&gt;因果交流電燈のひとつの青い照明です&lt;/li&gt;
+	&lt;li id="line-6"&gt;（ひかりはたもち　その電燈は失はれ）&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+		</article>
+
+
+
+		<article>
+			<p>&lt;/body&gt;タグの直上で、_tinytype.start() を呼び出す。</p>
 <pre><code>&lt;script&gt;
-_easytype.start({
+_tinytype.start({
 	line:[
 		{ selector: '#line-1', speed: 100 },
 		{ selector: '#line-2', speed: 100 },
