@@ -9,19 +9,23 @@ var _tinytype = {
 		for(var i=0 ; i < line_num; i++){
 			var el = document.querySelector(_opt.line[i].selector);
 			_opt.line[i].text = el.textContent;
-			el.textContent = "";
-			el.style.visibility = "visible";
+			// el.textContent = "";
+			// el.style.visibility = "visible";
 		}
 
 		var interval = function(){
 			var interval_id = setInterval(function(){
 
 				var el = document.querySelector(_opt.line[line].selector);
+				el.style.visibility = "visible";
 
 				// -- blink
 				if (count == -1){
-					if (!el.innerHTML) 	el.innerHTML = '<i></i>';
-					else 				el.innerHTML = "";
+					if (el.innerHTML !== '<i></i>'){
+						el.innerHTML = '<i></i>';
+					}else{
+						el.innerHTML = "　";
+					}
 
 					blink_count++;
 					if (blink_count >= _opt.blink * 2){

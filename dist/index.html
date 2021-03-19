@@ -30,12 +30,19 @@
 		/* -- cursor -- */
 		i{
 			font-style: normal;
-			border-right: solid 2px #000;
+			border-right: solid 2px #007bff;
 		}
 
-		#line-1, #line-2, #line-3, #line-4, #line-5, #line-6{
+		/* -- line(行) -- */
+		.lines li{
+			font-size:24px;
+			list-style: none;
 			visibility: hidden;
+			letter-spacing: 0.1em;
 		}
+
+		#line-1{ font-size:64px; font-weight: bold; }
+		#line-2{ font-size:32px; margin-bottom:40px;}
 	</style>
 </head>
 
@@ -52,13 +59,19 @@
 
 		<h1>DEMO</h1>
 		<article>
-			<ul>
-				<li id="line-1">わたくしといふ現象は仮定された有機交流電燈の</li>
-				<li id="line-2">ひとつの青い照明です（あらゆる透明な幽霊の複合体）</li>
-				<li id="line-3">風景やみんなといつしよにせはしくせはしく明滅しながら</li>
-				<li id="line-4">いかにもたしかにともりつづける</li>
-				<li id="line-5">因果交流電燈のひとつの青い照明です</li>
-				<li id="line-6">（ひかりはたもち　その電燈は失はれ）</li>
+			<ul class="lines">
+				<li id="line-1">春と修羅</li>
+				<li id="line-2">宮沢賢治</li>
+				<li id="line-3">わたくしといふ現象は</li>
+				<li id="line-4">仮定された有機交流電燈の</li>
+				<li id="line-5">ひとつの青い照明です</li>
+				<li id="line-6">（あらゆる透明な幽霊の複合体）</li>
+				<li id="line-7">風景やみんなといつしよに</li>
+				<li id="line-8">せはしくせはしく明滅しながら</li>
+				<li id="line-9">いかにもたしかにともりつづける</li>
+				<li id="line-10">因果交流電燈の</li>
+				<li id="line-11">ひとつの青い照明です</li>
+				<li id="line-12">（ひかりはたもち　その電燈は失はれ）</li>
 			</ul>
 		</article>
 
@@ -77,19 +90,21 @@
 		for(var i=0 ; i < line_num; i++){
 			var el = document.querySelector(_opt.line[i].selector);
 			_opt.line[i].text = el.textContent;
-			el.textContent = "";
-			el.style.visibility = "visible";
 		}
 
 		var interval = function(){
 			var interval_id = setInterval(function(){
 
 				var el = document.querySelector(_opt.line[line].selector);
+				el.style.visibility = "visible";
 
 				// -- blink
 				if (count == -1){
-					if (!el.innerHTML) 	el.innerHTML = '<i></i>';
-					else 				el.innerHTML = "";
+					if (el.innerHTML !== '<i></i>'){
+						el.innerHTML = '<i></i>';
+					}else{
+						el.innerHTML = "　";
+					}
 
 					blink_count++;
 					if (blink_count >= _opt.blink * 2){
@@ -129,8 +144,7 @@
 		interval();
 
 	}
-}
-</code></pre>
+}</code></pre>
 		</article>
 
 		<article>
@@ -139,12 +153,18 @@
 /* -- cursor -- */
 i{
 	font-style: normal;
-	border-right: solid 2px #000;
+	border-right: solid 2px #007bff;
 }
 
-#line-1, #line-2, #line-3, #line-4, #line-5, #line-6{{
+/* -- line(行) -- */
+.lines li{
+	font-size:24px;
+	list-style: none;
 	visibility: hidden;
 }
+
+#line-1{ font-size:64px; font-weight: bold; }
+#line-2{ font-size:32px; margin-bottom:40px;}
 &lt;/style&gt;
 </code></pre>
 		</article>
@@ -153,13 +173,19 @@ i{
 
 		<article>
 			<p></p>
-<pre><code>&lt;ul&gt;
-	&lt;li id="line-1"&gt;わたくしといふ現象は仮定された有機交流電燈の&lt;/li&gt;
-	&lt;li id="line-2"&gt;ひとつの青い照明です（あらゆる透明な幽霊の複合体）&lt;/li&gt;
-	&lt;li id="line-3"&gt;風景やみんなといつしよにせはしくせはしく明滅しながら&lt;/li&gt;
-	&lt;li id="line-4"&gt;いかにもたしかにともりつづける&lt;/li&gt;
-	&lt;li id="line-5"&gt;因果交流電燈のひとつの青い照明です&lt;/li&gt;
-	&lt;li id="line-6"&gt;（ひかりはたもち　その電燈は失はれ）&lt;/li&gt;
+<pre><code>&lt;ul class="lines"&gt;
+	&lt;li id="line-1"&gt;春と修羅&lt;/li&gt;
+	&lt;li id="line-2"&gt;宮沢賢治&lt;/li&gt;
+	&lt;li id="line-3"&gt;わたくしといふ現象は&lt;/li&gt;
+	&lt;li id="line-4"&gt;仮定された有機交流電燈の&lt;/li&gt;
+	&lt;li id="line-5"&gt;ひとつの青い照明です&lt;/li&gt;
+	&lt;li id="line-6"&gt;（あらゆる透明な幽霊の複合体）&lt;/li&gt;
+	&lt;li id="line-7"&gt;風景やみんなといつしよに&lt;/li&gt;
+	&lt;li id="line-8"&gt;せはしくせはしく明滅しながら&lt;/li&gt;
+	&lt;li id="line-9"&gt;いかにもたしかにともりつづける&lt;/li&gt;
+	&lt;li id="line-10"&gt;因果交流電燈の&lt;/li&gt;
+	&lt;li id="line-11"&gt;ひとつの青い照明です&lt;/li&gt;
+	&lt;li id="line-12"&gt;（ひかりはたもち　その電燈は失はれ）&lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
 		</article>
@@ -171,12 +197,18 @@ i{
 <pre><code>&lt;script&gt;
 _tinytype.start({
 	line:[
-		{ selector: '#line-1', speed: 100 },
-		{ selector: '#line-2', speed: 100 },
-		{ selector: '#line-3', speed: 100 },
-		{ selector: '#line-4', speed: 100 },
-		{ selector: '#line-5', speed: 100 },
-		{ selector: '#line-6', speed: 100 },
+		{ selector: '#line-1',  speed: 500 },
+		{ selector: '#line-2',  speed: 500 },
+		{ selector: '#line-3',  speed: 200 },
+		{ selector: '#line-4',  speed: 200 },
+		{ selector: '#line-5',  speed: 200 },
+		{ selector: '#line-6',  speed: 200 },
+		{ selector: '#line-7',  speed: 200 },
+		{ selector: '#line-8',  speed: 200 },
+		{ selector: '#line-9',  speed: 200 },
+		{ selector: '#line-10', speed: 200 },
+		{ selector: '#line-11', speed: 200 },
+		{ selector: '#line-12', speed: 200 },
 	],
 	blink :3,
 	callback: function(){
@@ -195,12 +227,18 @@ _tinytype.start({
 <script>
 _tinytype.start({
 	line:[
-		{ selector: '#line-1', speed: 100 },
-		{ selector: '#line-2', speed: 100 },
-		{ selector: '#line-3', speed: 100 },
-		{ selector: '#line-4', speed: 100 },
-		{ selector: '#line-5', speed: 100 },
-		{ selector: '#line-6', speed: 100 },
+		{ selector: '#line-1',  speed: 500 },
+		{ selector: '#line-2',  speed: 500 },
+		{ selector: '#line-3',  speed: 200 },
+		{ selector: '#line-4',  speed: 200 },
+		{ selector: '#line-5',  speed: 200 },
+		{ selector: '#line-6',  speed: 200 },
+		{ selector: '#line-7',  speed: 200 },
+		{ selector: '#line-8',  speed: 200 },
+		{ selector: '#line-9',  speed: 200 },
+		{ selector: '#line-10', speed: 200 },
+		{ selector: '#line-11', speed: 200 },
+		{ selector: '#line-12', speed: 200 },
 	],
 	blink :3,
 	callback: function(){
