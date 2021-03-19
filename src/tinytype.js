@@ -9,8 +9,6 @@ var _tinytype = {
 		for(var i=0 ; i < line_num; i++){
 			var el = document.querySelector(_opt.line[i].selector);
 			_opt.line[i].text = el.textContent;
-			// el.textContent = "";
-			// el.style.visibility = "visible";
 		}
 
 		var interval = function(){
